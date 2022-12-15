@@ -8,27 +8,21 @@ public class Compare : MonoBehaviour
 {
     [SerializeField] private Text text;
     [SerializeField] private InputField inputField;
+    [SerializeField] private InputField inputField2;
 
-    private int value = 0;
-
-    private void Start()
+    public void TwoNumbersCompare()
     {
-        value = UnityEngine.Random.Range(0,51);
-    }
-
-    public void CheckClicked()
-    {
-        if (inputField.text.Equals(value.ToString()))
+        if (Convert.ToInt32(inputField.text) > Convert.ToInt32(inputField2.text))
         {
-            text.text = "Верно";
+            text.text = inputField.text;
         }
-        else if (Convert.ToInt32(inputField.text) > value)
+        else if (Convert.ToInt32(inputField.text) < Convert.ToInt32(inputField2.text))
         {
-            text.text = "Загаданное число меньше";
+            text.text = inputField2.text;
         }
-        else if(Convert.ToInt32(inputField.text)<value)
+        else
         {
-            text.text = "Загаданное число больше";
+            text.text = "Числа равны";
         }
     }
 }

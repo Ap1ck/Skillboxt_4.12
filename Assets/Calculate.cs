@@ -8,30 +8,34 @@ using System;
 public class Calculate : MonoBehaviour
 {
     [SerializeField] private Text resultText;
-    [SerializeField] private Text arithmeticOperatorText;
     [SerializeField] private InputField firstNumber;
     [SerializeField] private InputField secondNumber;
 
-    
+    private int result = 0;
 
-    public void GetResult()
+    public void AddUpNumber()
     {
-        if (arithmeticOperatorText.Equals("+"))
-        {
-         
-        }
-        else if (arithmeticOperatorText.Equals("-"))
-        {
+        result = Convert.ToInt32(firstNumber.text) + Convert.ToInt32(secondNumber.text);
+    }
 
-        }
-        else if (arithmeticOperatorText.Equals("/"))
-        {
+    public void Split()
+    {
+        result = Convert.ToInt32(firstNumber.text) / Convert.ToInt32(secondNumber.text);
+    }
 
-        }
-        else if(arithmeticOperatorText.Equals("*"))
-        {
+    public void Multiply()
+    {
+        result = Convert.ToInt32(firstNumber.text) * Convert.ToInt32(secondNumber.text);
+    }
 
-        }
+    public void Subtract()
+    {
+        result = Convert.ToInt32(firstNumber.text) - Convert.ToInt32(secondNumber.text);
+    }
+
+    public void Show()
+    {
+        resultText.text = result.ToString();
     }
 
 }
